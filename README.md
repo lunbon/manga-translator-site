@@ -1,0 +1,3 @@
+# manga-translator-site
+Hi, I'm mang translator and I needed a site to save titles, which I translated, 
+so I created this site... 
