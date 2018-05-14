@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{%block content%}
+{%for chapter in chapters%}
+	<div class="poster">
+		<a href="{{url_for('chapter',chapter_id=chapter.id)}}">
+			<img src="{{chapter.poster_url}}">
+			<span>{{chapter.chapter_name}}</span>
+		</a>
+	</div>
+{%endfor%}
+{%endblock%}

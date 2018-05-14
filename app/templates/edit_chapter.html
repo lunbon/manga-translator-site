@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block content %}
+<form action="", method="POST">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.chapter_name.label}}
+		{{form.chapter_name(size=32)}}
+	</p>
+	<p>
+		{{form.chapter_number.label}}
+		{{form.chapter_number(size=32)}}
+	</p>
+	<p>
+		{{form.poster_url.label}}
+		{{form.poster_url(size=32)}}
+	</p>
+	<p>
+		{{form.read_url.label}}
+		{{form.read_url(size=32)}}
+	</p>
+	<p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

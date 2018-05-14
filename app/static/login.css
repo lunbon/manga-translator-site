@@ -1,0 +1,14 @@
+.content{
+	display: block;
+	width: 150px;
+	margin-left: 45%;
+	padding: 10px;
+	height: 90px;
+	text-align: center;
+}
+input{
+	width: 100%;
+	border: none;
+	height: 20px;
+	margin-top:5px;
+}

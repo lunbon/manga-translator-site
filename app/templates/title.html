@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{%block content%}
+<dl>
+<dt><h3>Главы: </h3></dt>
+{%for chapter in chapters%}
+	<dd>
+		<a href="{{url_for('chapter',chapter_id=chapter.id)}}">{{chapter.chapter_name}} ----- {{chapter.chapter_number}}
+		</a>
+	</dd>
+{%endfor%}
+</dl>
+{%endblock%}

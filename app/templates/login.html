@@ -1,0 +1,12 @@
+
+{% extends 'base.html'%}
+{%block css%}	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='login.css')}}">{%endblock%}
+{%block content%}
+<h3>Форма входа: </h3>
+	<form action="" method="POST">
+		{{form.hidden_tag()}}
+		<p>{{form.username(size=32)}}</p>
+		<p>{{form.password(size=32)}}</p>
+		<p>{{form.submit()}}</p>
+	</form>
+{%endblock%}
