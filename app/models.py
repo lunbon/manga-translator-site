@@ -9,6 +9,12 @@ class Title(db.Model):
 	title_name  = db.Column(db.String(128), index=True, unique=True)
 	description = db.Column(db.String(2048), default=' ')
 	chapters = db.relationship('Chapter', backref='title', lazy='dynamic')
+	def get_poster_url(self):
+		chapter=Chapter.query.filter_by(title=self).first()
+		if chapter:
+			return chapter.poster_url
+		else: 
+			return
 	def __repr__(self):
 		return self.title_name
 

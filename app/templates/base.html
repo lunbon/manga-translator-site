@@ -9,7 +9,9 @@
 <body>
 <header>
 	<a href="/"><span>TheDarkLord</span></a>
+	<div class="links"><a href="{{url_for('index')}}">последние релизы</a> / <a href="{{url_for('titles')}}">список тайтлов</a></p>
 </header>
+
 <div class="content">
 	{%block content%}{%endblock%}
 </div>

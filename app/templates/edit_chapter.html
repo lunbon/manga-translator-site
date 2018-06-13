@@ -3,19 +3,19 @@
 <form action="", method="POST">
 	{{form.hidden_tag()}}
 	<p>
-		{{form.chapter_name.label}}
+		<div>{{form.chapter_name.label}}</div>
 		{{form.chapter_name(size=32)}}
 	</p>
 	<p>
-		{{form.chapter_number.label}}
+		<div>{{form.chapter_number.label}}</div>
 		{{form.chapter_number(size=32)}}
 	</p>
 	<p>
-		{{form.poster_url.label}}
+		<div>{{form.poster_url.label}}</div>
 		{{form.poster_url(size=32)}}
 	</p>
 	<p>
-		{{form.read_url.label}}
+		<div>{{form.read_url.label}}</div>
 		{{form.read_url(size=32)}}
 	</p>
 	<p>{{ form.submit() }}</p>

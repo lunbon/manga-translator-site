@@ -3,11 +3,11 @@
 <form action="", method="POST">
 	{{form.hidden_tag()}}
 	<p>
-		{{form.title_name.label}}
+		<div>{{form.title_name.label}}</div>
 		{{form.title_name(size=32)}}
 	</p>
 	<p>
-		{{form.description.label}}
+		<div>{{form.description.label}}</div>
 		{{form.description(size=32)}}
 	</p>
 	<p>{{ form.submit() }}</p>

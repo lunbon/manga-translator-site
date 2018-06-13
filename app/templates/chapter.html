@@ -1,12 +1,12 @@
 {% extends 'base.html'%}
 {%block css%}	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='chapter.css')}}">{%endblock%}
 {%block content%}
-<img class="chapter_poster" src="{{chapter.poster_url}}">
-	<div>
-		<h2>{{chapter.chaper_name}}</h2>
+<h2>{{chapter.chapter_name}}</h2>
+	<div class="chapter_info">
+		<img class="chapter_poster" src="{{chapter.poster_url}}">
 		<div class='chapter_links'>
 			<p>Тайтл: <a href="{{url_for('title', title_id=chapter.title_id)}}">{{title_name}}</a></p>
-			<p>Читать: <a href="{{chapter.read_url}}">readmanga</a>
+			<p>Читать: <a href="{{chapter.read_url}}">readmanga</a></p>
 		</div>
 	</div>
 {%endblock%}

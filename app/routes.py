@@ -1,7 +1,7 @@
 from app import app, db
 from app.models import Chapter, Title
 from flask import render_template, redirect, url_for,request
-from app.forms import EditChapterForm, EditTitleForm, LoginForm
+from app.forms import EditChapterForm, EditTitleForm
 from flask_login import current_user, login_user, login_required,logout_user
 from app.models import User
 
@@ -9,7 +9,10 @@ from app.models import User
 def index():
 	chapters = Chapter.query.filter(True).order_by(Chapter.added_time.desc())
 	return render_template('index.html',title='Home',chapters=chapters)
-
+@app.route('/titles')
+def titles():
+	titles = Title.query.filter(True).order_by(Title.id.desc())
+	return render_template('titles.html',title='Home',titles=titles)
 @app.route('/titles/<title_id>')
 def title(title_id):
 	title = Title.query.filter_by(id=title_id).first_or_404()
@@ -78,19 +81,4 @@ def delete_chapter(chapter_id):
 	db.session.delete(chapter)
 	db.session.commit()
 	return redirect(url_for('index'))
-@app.route('/logout')
-def logout():
-	logout_user()
-	return redirect(url_for('index'))
-@app.route('/login', methods=['GET','POST'])
-def login():
-	if current_user.is_authenticated:
-		return redirect(url_for('index'))
-	form = LoginForm()
-	if form.validate_on_submit():
-		user = User.query.filter_by(username=form.username.data).first()
-		if user is None or not user.check_password(form.password.data):
-			return redirect(url_for('login'))
-		login_user(user, remember=False)
-		return redirect(url_for('index'))
-	return render_template('login.html', title='Sign in', form=form)
+

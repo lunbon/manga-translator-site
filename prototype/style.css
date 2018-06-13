@@ -11,15 +11,12 @@ header, .content{
 	color:white;
 }
 header{
+	display: flex;
 	width:100%;
 	height:80px;
+	align-items:center;
+	justify-content: center;
 	font-size:30px;
-	text-align: center;
-	padding-top: 20px;
-}
-header .links{
-	font-size:12px;
-	margin-top: 10px;
 }
 
 .content{
