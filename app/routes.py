@@ -54,6 +54,7 @@ def add_title():
 	if form.validate_on_submit():
 		title.title_name = form.title_name.data
 		title.description = form.description.data
+		db.session.add(title)
 		db.session.commit()
 		return redirect(url_for('title', title_id=title.id))
 	return render_template('edit_title.html', title="add title", form=form)
@@ -66,6 +67,7 @@ def add_chapter(title_id):
 	form = EditChapterForm()
 	if form.validate_on_submit():
 		chapter.chapter_name = form.chapter_name.data
+		chapter.chapter_number = form.chapter_number.data
 		chapter.poster_url = form.poster_url.data
 		chapter.read_url = form.read_url.data
 		db.session.add(chapter)
